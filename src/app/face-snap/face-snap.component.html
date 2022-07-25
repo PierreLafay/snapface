@@ -1,10 +1,13 @@
-<div class="face-snap-card">
-  <h2>{{ faceSnap.title }}</h2>
-  <p>Mis en ligne le {{ faceSnap.createdDate }}</p>
+<div class="face-snap-card" [ngClass]="{ liked: buttonText === 'Supprimer like' }">
+  <h2>{{ faceSnap.title | uppercase }}</h2>
+  <h3>{{ faceSnap.description }}</h3>
   <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
-  <p>{{ faceSnap.description }}</p>
+  <p>Prix : {{ faceSnap.price | currency : 'EUR'}}</p>
+  <p *ngIf="faceSnap.location">Photo prise à {{ faceSnap.location }}</p>
+  <p>Mis en ligne le {{ faceSnap.createdDate | date: 'd MMMM yyyy à HH:mm' }}</p>
   <p>
     <button (click)="onLike()">{{buttonText}}</button>
-    👍 {{ faceSnap.likes }}
+    <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.likes*10 + ', 0)' }">👍 {{ faceSnap.likes }}</span>
   </p>
 </div>
+<hr/>
