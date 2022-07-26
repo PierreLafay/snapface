@@ -12,6 +12,7 @@ export class NewFaceSnapComponent implements OnInit {
 
   snapForm!: FormGroup;
   faceSnapPreview$!: Observable<FaceSnap>;
+  urlRegex: RegExp = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)/;
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -19,7 +20,7 @@ export class NewFaceSnapComponent implements OnInit {
     this.snapForm = this.formBuilder.group({
       title: [null, [Validators.required] ],
       description: [null, [Validators.required]],
-      imageUrl: [null, [Validators.required]],
+      imageUrl: [null, [Validators.required, Validators.pattern(this.urlRegex)]],
       location: ['Paris'],
       price: [null],
     });
