@@ -23,6 +23,8 @@ export class NewFaceSnapComponent implements OnInit {
       imageUrl: [null, [Validators.required, Validators.pattern(this.urlRegex)]],
       location: ['Paris'],
       price: [null],
+    }, {
+      updateOn: 'blur'
     });
     this.faceSnapPreview$ = this.snapForm.valueChanges.pipe(
       map(formValue => ({
