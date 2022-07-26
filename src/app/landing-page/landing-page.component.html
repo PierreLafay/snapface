@@ -3,10 +3,15 @@
   <div class="landing-links">
     <button (click)="onContinue()">Continuer vers Snapface</button>
   </div>
-  <form (ngSubmit)="onSubmitForm()">
-    <label for="emailInput">Inscrivez-vous pour recevoir notre newsletter !</label>
+  <form #emailForm="ngForm" (ngSubmit)="onSubmitForm(emailForm)">
+    <h3>Inscription Newsletter</h3>
+    <label for="emailInput">Nom</label>
+    <input id="emailInput" name="userName" type="text" [(ngModel)]="userName">
+    <label for="emailInput">Prénom</label>
+    <input id="emailInput" name="userFirst" type="text" [(ngModel)]="userFirstName">
+    <label for="emailInput">Adresse Email</label>
     <input id="emailInput" name="userEmail" type="email" [(ngModel)]="userEmail">
-    <button type="submit">OK!</button>
+    <button type="submit">Inscription</button>
   </form>
 </div>
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-landing-page',
@@ -10,10 +11,12 @@ export class LandingPageComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  userEmail: string = 'Une initialisation';
+  userName: string = 'LE HERO';
+  userFirstName: string = 'Toto';
+  userEmail: string = 'toto@toto.com';
 
-  onSubmitForm() {
-    console.log(this.userEmail);
+  onSubmitForm(form: NgForm ) {
+    console.log(form.value);
   }
 
   ngOnInit(): void {
