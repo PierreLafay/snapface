@@ -1,4 +1,4 @@
-<div class="face-snap-card" [ngClass]="{ liked: buttonText === 'Supprimer like' }">
+<div class="face-snap-card" *ngIf="faceSnap$ | async as faceSnap" [ngClass]="{ liked: buttonText === 'Supprimer like' }">
   <h2>{{ faceSnap.title | uppercase }}</h2>
   <h3>{{ faceSnap.description }}</h3>
   <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
