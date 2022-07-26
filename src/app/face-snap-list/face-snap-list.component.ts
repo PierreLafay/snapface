@@ -12,7 +12,7 @@ export class FaceSnapListComponent implements OnInit, OnDestroy {
 
   faceSnaps!: FaceSnap[];
 
-  // Obersavle permettant de gérer la fin de l'observable interval
+  // Observable permettant de gérer la fin de l'observable interval
   private destroy$!: Subject<boolean>
 
   constructor(private faceSnapsService: FaceSnapsService) { }

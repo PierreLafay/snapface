@@ -10,6 +10,12 @@ export class LandingPageComponent implements OnInit {
 
   constructor(private router: Router) { }
 
+  userEmail: string = 'Une initialisation';
+
+  onSubmitForm() {
+    console.log(this.userEmail);
+  }
+
   ngOnInit(): void {
   }
 
