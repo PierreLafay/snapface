@@ -5,10 +5,10 @@
   </div>
   <form #emailForm="ngForm" (ngSubmit)="onSubmitForm(emailForm)">
     <h3>Inscription Newsletter</h3>
-    <label for="emailInput">Nom</label>
-    <input id="emailInput" name="userName" type="text" [(ngModel)]="userName">
-    <label for="emailInput">Prénom</label>
-    <input id="emailInput" name="userFirst" type="text" [(ngModel)]="userFirstName">
+    <label for="nameInput">Nom</label>
+    <input id="nameInput" name="userName" type="text" [(ngModel)]="userName">
+    <label for="firstNameInput">Prénom</label>
+    <input id="firstNameInput" name="userFirst" type="text" [(ngModel)]="userFirstName">
     <label for="emailInput">Adresse Email</label>
     <input id="emailInput" name="userEmail" type="email" [(ngModel)]="userEmail">
     <button type="submit">Inscription</button>
