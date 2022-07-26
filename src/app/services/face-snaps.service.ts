@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FaceSnap } from '../models/face-snap.model';
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root' // enregistré à la racine de l'app, partagé entre les composants
@@ -38,9 +40,12 @@ export class FaceSnapsService {
     }
   ];
 
-  getAllFaceSnaps(): FaceSnap[] {
-    return this.faceSnaps;
+  constructor(private http: HttpClient) {}
+
+  getAllFaceSnaps(): Observable<FaceSnap[]> {
+    return this.http.get<FaceSnap[]>('http://localhost:3000/facesnaps');
   }
+
   getFaceSnapById(faceSnapId: number): FaceSnap {
     const faceSnap = this.faceSnaps.find(faceSnap => faceSnap.id === faceSnapId);
     if (!faceSnap) {
