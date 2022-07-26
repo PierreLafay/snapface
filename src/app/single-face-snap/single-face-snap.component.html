@@ -6,7 +6,7 @@
   <p *ngIf="faceSnap.location">Photo prise à {{ faceSnap.location }}</p>
   <p>Créé le {{ faceSnap.createdDate | date: 'd MMMM yyyy à HH:mm' }}</p>
   <p>
-    <button (click)="onLike()">{{buttonText}}</button>
+    <button (click)="onLike(faceSnap.id)">{{buttonText}}</button>
     <span class="likes" [ngStyle]="{ color: 'rgb(0, ' + faceSnap.likes*10 + ', 0)' }">👍 {{ faceSnap.likes }}</span>
   </p>
   <div class="links">

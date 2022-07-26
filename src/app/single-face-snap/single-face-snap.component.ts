@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FaceSnap} from "../models/face-snap.model";
 import {FaceSnapsService} from "../services/face-snaps.service";
 import {ActivatedRoute} from "@angular/router";
-import {Observable} from "rxjs";
+import {Observable, tap} from "rxjs";
 
 @Component({
   selector: 'app-single-face-snap',
@@ -23,14 +23,15 @@ export class SingleFaceSnapComponent implements OnInit {
     const snapId = +this.route.snapshot.params['id'];
     this.faceSnap$ = this.faceSnapsService.getFaceSnapById(snapId);
   }
-  onLike() {
-
+  onLike(faceSnapId: number) {
     if (this.buttonText === 'Ajouter like') {
-      this.faceSnapsService.snapFaceLikeById(this.faceSnap.id,'like');
-      this.buttonText = 'Supprimer like';
+      this.faceSnap$ = this.faceSnapsService.likeFaceSnapById(faceSnapId, 'like').pipe(
+        tap(() => this.buttonText = 'Supprimer like')
+      );
     } else {
-      this.faceSnapsService.snapFaceLikeById(this.faceSnap.id,'unlike');
-      this.buttonText = 'Ajouter like';
+      this.faceSnap$ = this.faceSnapsService.likeFaceSnapById(faceSnapId, 'unlike').pipe(
+        tap(() => this.buttonText = 'Ajouter like')
+      );
     }
   }
 }
