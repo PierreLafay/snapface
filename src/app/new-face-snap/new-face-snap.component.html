@@ -23,7 +23,7 @@
       <input id="price" type="text" formControlName="price">
     </div>
     <div class="action-buttons">
-      <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
+      <button type="submit" (click)="onSubmitForm()" [disabled]="snapForm.invalid">Enregistrer</button>
     </div>
   </form>
 </div>

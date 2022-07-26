@@ -18,11 +18,10 @@ export class NewFaceSnapComponent implements OnInit {
   ngOnInit(): void {
     this.snapForm = this.formBuilder.group({
       title: [null, [Validators.required] ],
-      description: ['Description de l\'objet'],
-      imageUrl: ['https://www.test.com'],
+      description: [null, [Validators.required]],
+      imageUrl: [null, [Validators.required]],
       location: ['Paris'],
-      price: 12,
-      createdDate: [null]
+      price: [null],
     });
     this.faceSnapPreview$ = this.snapForm.valueChanges.pipe(
       map(formValue => ({
