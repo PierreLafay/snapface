@@ -1,41 +1,26 @@
 .landing-block {
   width: 400px;
-  margin: auto;
-  margin-top: 40px;
+  margin: 40px auto;
 }
 
 .landing-links {
-  width: 100%;
   text-align: center;
-}
-
-img { width: 400px; }
-button {
-  background-color: transparent;
-  box-sizing: border-box;
-  padding: 5px 10px;
-  border: none;
-  box-shadow: lightgray 3px 3px 7px;
-  margin-right: 20px;
-  outline: none;
-  font-size: 20px;
-  font-weight: 500;
-  &:active {
-    transform: translate(1px, 1px);
-    box-shadow: lightgray 0 0 5px;
-  }
+  background: url('../../assets/images/snapface.png');
+  width: 400px;
+  height: 60px;
+  padding-top: 170px;
 }
 
 h3 { text-align: center; }
+img { width: 400px; }
+
 form button {
   display: block;
   margin: 20px auto 5px;
-  background-color: #aaa;
-  box-shadow: #888 3px 3px 7px;
 }
 
 form {
-  margin-top: 50px;
+  margin-top: 40px;
   padding: 20px;
   background-color: #ccc;
   border-radius: 10px;

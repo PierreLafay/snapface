@@ -19,11 +19,18 @@
       <input id="location" type="text" formControlName="location">
     </div>
     <div class="form-group">
-      <label for="location">Prix</label>
+      <label for="price">Prix</label>
       <input id="price" type="text" formControlName="price">
     </div>
     <div class="action-buttons">
       <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
     </div>
   </form>
+</div>
+<div class="face-snap-card" *ngIf="faceSnapPreview$ | async as faceSnap">
+  <h2>{{ faceSnap.title | uppercase }}</h2>
+  <p>Créé le {{ faceSnap.createdDate | date: 'à HH:mm, le d MMMM yyyy' }}</p>
+  <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
+  <p>{{ faceSnap.description }}</p>
+  <p *ngIf="faceSnap.location">Photo prise à {{ faceSnap.location }}</p>
 </div>

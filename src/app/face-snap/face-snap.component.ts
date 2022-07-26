@@ -20,15 +20,6 @@ export class FaceSnapComponent implements OnInit {
   ngOnInit(): void {
      this.buttonText = 'Ajouter like';
   }
-  onLike() {
-    if (this.buttonText === 'Ajouter like') {
-      this.faceSnapsService.snapFaceLikeById(this.faceSnap.id,'like');
-      this.buttonText = 'Supprimer like';
-    } else {
-      this.faceSnapsService.snapFaceLikeById(this.faceSnap.id,'unlike');
-      this.buttonText = 'Ajouter like';
-    }
-  }
 
   onViewFaceSnap() {
     this.router.navigateByUrl(`facesnaps/${this.faceSnap.id}`);
