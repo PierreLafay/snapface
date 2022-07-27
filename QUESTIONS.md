@@ -17,3 +17,6 @@
 
 ### Chapitre 13 : Interceptors
 - Dans le panneau de développement, pour chaque requête, il y a maintenant une requête préalable. Qu'est-ce que cette requête ?
+
+### Chapitre 15 : Modules
+- Le module core-module doit-il avoir nécessairement ce nom ou pourrait-il s'appeler facesnap-core-module ?
