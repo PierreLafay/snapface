@@ -20,3 +20,7 @@
 
 ### Chapitre 15 : Modules
 - Le module core-module doit-il avoir nécessairement ce nom ou pourrait-il s'appeler facesnap-core-module ?
+- Pourquoi n'importe-t-on pas le module routerModule dans landing-page-module ?
+- Quel est le lien / la diffférence entre Router et RouterModule ?
+- Quand faut-il commencer à modulariser ?
+> Je pense dès que l'on a une idée claire de l'organisation des composants
