@@ -1,8 +1,9 @@
 import {LOCALE_ID, NgModule} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, registerLocaleData} from '@angular/common';
 import { httpInterceptorProviders } from './interceptors';
 import {HeaderComponent} from "./Components/header/header.component";
 import { RouterModule } from '@angular/router';
+import * as fr from "@angular/common/locales/fr";
 
 @NgModule({
   declarations: [
@@ -20,4 +21,9 @@ import { RouterModule } from '@angular/router';
     httpInterceptorProviders
   ]
 })
-export class CoreModule { }
+export class CoreModule {
+  constructor() {
+    registerLocaleData(fr.default);
+  }
+
+}

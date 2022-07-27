@@ -4,8 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FaceSnapComponent } from './face-snap/face-snap.component';
 
-import { registerLocaleData } from '@angular/common';
-import * as fr from '@angular/common/locales/fr';
 import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -36,7 +34,4 @@ import {CoreModule} from "./core/core.module";
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor() {
-    registerLocaleData(fr.default);
-  }
 }
